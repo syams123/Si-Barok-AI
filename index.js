@@ -57,4 +57,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
  
-app.listen(3000, () => console.log("🚀 Server running di http://localhost:3000"));
+// BARIS BARU: Menggunakan PORT dari Environment (Render) atau default 3000 (Lokal)
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log(`🚀 Server running di http://localhost:${PORT}`));
