@@ -1,0 +1,104 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #a8e063, #56ab2f);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #111;
+}
+ 
+/* Header */
+header {
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
+  color: white;
+  padding: 16px 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+header span { font-size: 1.8rem; }
+ 
+/* Chat Box */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+/* Pesan */
+.message {
+  max-width: 80%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  line-height: 1.5;
+  font-size: 1rem;
+  word-break: break-word;
+  animation: fadeIn 0.3s ease, slideUp 0.3s ease;
+}
+ 
+.message.user {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  align-self: flex-end;
+}
+ 
+.message.bot {
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+  align-self: flex-start;
+}
+ 
+.sender {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+ 
+/* Form Input */
+form {
+  display: flex;
+  padding: 14px;
+  border-top: 2px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.9);
+}
+ 
+input[type="text"] {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+ 
+button {
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  padding: 0 22px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+ 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.7);
+}
