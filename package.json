@@ -1,22 +1,24 @@
 {
   "name": "karo-ai",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chatbot Si Barok AI",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "next start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Syams Digital",
   "license": "ISC",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "dotenv": "^17.2.3",
-    "next": "^16.0.8",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
