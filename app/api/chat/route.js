@@ -17,11 +17,15 @@ export async function POST(req) {
     return new Response(JSON.stringify({ reply }), {
       headers: { "Content-Type": "application/json" },
     });
-  } catch (err) {
-    console.error("Gemini API error:", err);
-    return new Response(JSON.stringify({ reply: "⚡ Gagal nyambung ke Gemini API" }), {
+} catch (err) {
+  console.error("Gemini API error:", err);
+
+  return new Response(
+    JSON.stringify({ reply: `⚡ Error detail: ${err.message}` }),
+    {
       headers: { "Content-Type": "application/json" },
       status: 500,
-    });
-  }
+    }
+  );
 }
+
