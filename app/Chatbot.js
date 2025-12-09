@@ -11,20 +11,23 @@ export default function Chatbot() {
     e.preventDefault();
     if (!input.trim()) return;
 
+    // tampilkan pesan user
     setMessages([...messages, { from: 'user', text: input }]);
     const userMessage = input;
     setInput('');
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      // arahkan ke API route di Vercel
+      const res = await fetch("https://si-barok-ai.vercel.app/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMessage }),
       });
+
       const data = await res.json();
       setMessages(m => [...m, { from: 'bot', text: data.reply || 'Ups, ada error 😅' }]);
-    } catch {
-      setMessages(m => [...m, { from: 'bot', text: '⚡ Gagal nyambung ke server' }]);
+    } catch (err) {
+      setMessages(m => [...m, { from: 'bot', text: '⚡ Gagal nyambung ke Gemini API' }]);
     }
   };
 
@@ -56,4 +59,3 @@ export default function Chatbot() {
     </div>
   );
 }
-
